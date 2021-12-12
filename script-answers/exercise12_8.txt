@@ -1,0 +1,138 @@
+Script started on Sat Dec 11 23:18:14 2021
+[?1034hbash-3.2$ exit[2Plsdocker exec todo-backend_mongo_1 bash[C[C[C[C[C[C[C[C[C[Cls[Kdocker exec todo-backend_mongo_1 bash[C[C[C[C[C[C[C[C[C[Cls[Kexit[Kdocker conatine[K[K[K[K[Ktainer ls
+CONTAINER ID   IMAGE     COMMAND                  CREATED       STATUS          PORTS                     NAMES
+8481fe723395   mongo     "docker-entrypoint.s…"   7 hours ago   Up 19 seconds   0.0.0.0:3456->27017/tcp   todo-backend_mongo_1
+bash-3.2$ docker exec -it 8481fe723395
+"docker exec" requires at least 2 arguments.
+See 'docker exec --help'.
+
+Usage:  docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+Run a command in a running container
+bash-3.2$ docker exec -it 8481fe723395 bash
+]0;root@8481fe723395: /root@8481fe723395:/# mongo
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("1c4ddcb0-2acd-4acd-9958-f4a379676a5e") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+	https://community.mongodb.com
+> show dbs[3G[Jshow dbs[11G
+> show db[3G[Jshow db[10G
+uncaught exception: Error: don't know how to show [db] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> show dbs[3G[Jshow dbs[11G
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+Warning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+> [3G[J[3G
+> show documents[3G[Jshow documents[17G
+uncaught exception: Error: don't know how to show [documents] :
+shellHelper.show@src/mongo/shell/utils.js:1211:11
+shellHelper@src/mongo/shell/utils.js:838:15
+@(shellhelp2):1:1
+> db.todos.find()[3G[Jdb.todos.find[1;34m([0m)[17G[3G[Jdb.todos.find([1;34m{[0m)[18G[3G[Jdb.todos.find[1;34m([0m{})[19G[3G[Jdb.todos.find({})[20G
+Error: error: {
+	"ok" : 0,
+	"errmsg" : "command find requires authentication",
+	"code" : 13,
+	"codeName" : "Unauthorized"
+}
+> root db.todos.find()[3G[Jroot db.todos.find[1;34m([0m)[22G[3G[Jroot db.todos.find([1;34m{[0m)[23G[3G[Jroot db.todos.find[1;34m([0m{})[24G[3G[Jroot db.todos.find({})[25G
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:5
+> [3G[Jroot db.todos.find({})[25G[3G[Jroot db.todos.find[1;34m([0m{})[24G[3G[Jroot db.todos.find([1;34m{[0m})[23G[3G[Jroot db.todos.find({[1;34m}[0m)[22G[3G[Jroot db.todos.find({}[1;34m)[0m[21G[3G[Jroot db.todos.find({})[20G[3G[Jroot db.todos.find({})[19G[3G[Jroot db.todos.find({})[18G[3G[Jroot db.todos.find({})[17G[3G[Jroot db.todos.find({})[16G[3G[Jroot db.todos.find({})[15G[3G[Jroot db.todos.find({})[14G[3G[Jroot db.todos.find({})[13G[3G[Jroot db.todos.find({})[12G[3G[Jroot db.todos.find({})[11G[3G[Jroot db.todos.find({})[10G[3G[Jroot db.todos.find({})[9G[3G[Jroot db.todos.find({})[8G[3G[Jrootdb.todos.find({})[7G[3G[Jroodb.todos.find({})[6G[3G[Jrodb.todos.find({})[5G[3G[Jrdb.todos.find({})[4G[3G[Jdb.todos.find({})[3G[3G[Jdb.todos.find({})[4G[3G[Jdb.todos.find({})[5G[3G[Jdb.todos.find({})[6G[3G[Jdb.todos.find({})[7G[3G[Jdb.todos.find({})[8G[3G[Jdb.todos.find({})[9G[3G[Jdb.todos.find({})[10G[3G[Jdb.todos.find({})[11G[3G[Jdb.todos.find({})[12G[3G[Jdb.todos.find({})[13G[3G[Jdb.todos.find({})[14G[3G[Jdb.todos.find({})[15G[3G[Jdb.todos.find({}[1;34m)[0m[16G[3G[Jdb.todos.find({[1;34m}[0m)[17G[3G[Jdb.todos.find([1;34m{[0m})[18G[3G[Jdb.todos.find[1;34m([0m{})[19G[3G[Jdb.todos.find({})[20G -p[3G[Jdb.todos.find({}) -p[23G
+uncaught exception: ReferenceError: p is not defined :
+@(shell):1:1
+> [3G[J[3G^C
+bye
+]0;root@8481fe723395: /root@8481fe723395:/# root      sudo mongo
+bash: sudo: command not found
+]0;root@8481fe723395: /root@8481fe723395:/# rooot mon       t ot monogo   go
+bash: root: command not found
+]0;root@8481fe723395: /root@8481fe723395:/# roo   .p  .p mongo        -m p mongo
+bash: -p: command not found
+]0;root@8481fe723395: /root@8481fe723395:/# mongo -p
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("0e87ff08-7e82-480c-92a8-6342e8775183") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+> db.[3G[Jdb[5G[3G[Jd[4G[3G[J[3Guse the_database[3G[Juse the_database[19G
+switched to db the_database
+> show collections[3G[Jshow collections[19G
+Warning: unable to run listCollections, attempting to approximate collection names by parsing connectionStatus
+> db.todos.find()[3G[Jdb.todos.find[1;34m([0m)[17G[3G[Jdb.todos.find(})[18G[3G[Jdb.todos.find[1;34m([0m)[17G[3G[Jdb.todos.find)[16G[3G[Jdb.todos.find[1;34m{[0m)[17G[3G[Jdb.todos.find{})[18G[3G[Jdb.todos.find[1;34m{[0m})[17G[3G[Jdb.todos.find{[1;34m}[0m)[16G[3G[Jdb.todos.find({[1;34m}[0m)[17G[3G[Jdb.todos.find({})[20G
+Error: error: {
+	"ok" : 0,
+	"errmsg" : "command find requires authentication",
+	"code" : 13,
+	"codeName" : "Unauthorized"
+}
+> [3G[Jdb.todos.find({})[20G -p[3G[Jdb.todos.find({}) -p[23G
+uncaught exception: ReferenceError: p is not defined :
+@(shell):1:1
+> mongo -y[3G[Jmongo -[10G[3G[Jmongo [9G[3G[Jmongo[8G[3G[Jmong[7G[3G[Jmon[6G[3G[Jmo[5G[3G[Jm[4G[3G[J[3G[3G[J[3G^C
+bye
+]0;root@8481fe723395: /root@8481fe723395:/# mongo - -u root -p example
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("1e2bc35f-63fe-4c95-8336-9a52d1b3d887") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> use the_database[3G[Juse the_database[19G
+switched to db the_database
+> show.-[3G[Jshow.[8G[3G[Jshow[7G[3G[Jsho[6G[3G[Jsh[5G[3G[Js[4G[3G[J[3Gdv[3G[Jd[4Gb-todo[3G[Jdb-tod[9G[3G[Jdb-to[8G[3G[Jdb-t[7G[3G[Jdb-[6G[3G[Jdb[5G.todos.find()[3G[Jdb.todos.find[1;34m([0m)[17G[3G[Jdb.todos.find([1;34m{[0m)[18G[3G[Jdb.todos.find[1;34m([0m{})[19G[3G[Jdb.todos.find({})[20G
+{ "_id" : ObjectId("61b4b01676afaf2165509873"), "text" : "Write even more code", "done" : true }
+{ "_id" : ObjectId("61b4b01676afaf2165509874"), "text" : "Learn about containers", "done" : false }
+> db.inse[3G[Jdb.ins[9G[3G[Jdb.in[8G[3G[Jdb.i[7G[3G[Jdb.[6Gtodos.insertOne()[3G[Jdb.todos.insertOne[1;34m([0m)[22G[3G[Jdb.todos.insertOne([1;34m{[0m)[23G[3G[Jdb.todos.insertOne[1;34m([0m{})[24G[3G[Jdb.todos.insertOne([1;34m{[0m})[23G[3G[Jdb.todos.insertOne([1;34m{[0m })[24G[3G[Jdb.todos.insertOne([1;34m{[0m  })[25G[3G[Jdb.todos.insertOne({  })[24G[3G[Jdb.todos.insertOne({  })[23G[3G[Jdb.todos.insertOne({   })[24G[3G[Jdb.todos.insertOne({ t  })[25G[3G[Jdb.todos.insertOne({ te  })[26G[3G[Jdb.todos.insertOne({ tex  })[27G[3G[Jdb.todos.insertOne({ text  })[28G[3G[Jdb.todos.insertOne({ text:  })[29G[3G[Jdb.todos.insertOne({ text  })[28G[3G[Jdb.todos.insertOne({ tex  })[27G[3G[Jdb.todos.insertOne({ te  })[26G[3G[Jdb.todos.insertOne({ t  })[25G[3G[Jdb.todos.insertOne({   })[24G[3G[Jdb.todos.insertOne({ t  })[25G[3G[Jdb.todos.insertOne({ te  })[26G[3G[Jdb.todos.insertOne({ tex  })[27G[3G[Jdb.todos.insertOne({ text  })[28G[3G[Jdb.todos.insertOne({ text.  })[29G[3G[Jdb.todos.insertOne({ text  })[28G[3G[Jdb.todos.insertOne({ text:  })[29G[3G[Jdb.todos.insertOne({ text:   })[30G[3G[Jdb.todos.insertOne({ text: "  })[31G[3G[Jdb.todos.insertOne({ text: "I  })[32G[3G[Jdb.todos.insertOne({ text: "In  })[33G[3G[Jdb.todos.insertOne({ text: "Inc  })[34G[3G[Jdb.todos.insertOne({ text: "Incr  })[35G[3G[Jdb.todos.insertOne({ text: "Incre  })[36G[3G[Jdb.todos.insertOne({ text: "Increa  })[37G[3G[Jdb.todos.insertOne({ text: "Increas  })[38G[3G[Jdb.todos.insertOne({ text: "Increase  })[39G[3G[Jdb.todos.insertOne({ text: "Increase   })[40G[3G[Jdb.todos.insertOne({ text: "Increase t  })[41G[3G[Jdb.todos.insertOne({ text: "Increase th  })[42G[3G[Jdb.todos.insertOne({ text: "Increase the  })[43G[3G[Jdb.todos.insertOne({ text: "Increase the   })[44G[3G[Jdb.todos.insertOne({ text: "Increase the n  })[45G[3G[Jdb.todos.insertOne({ text: "Increase the nu  })[46G[3G[Jdb.todos.insertOne({ text: "Increase the num  })[47G[3G[Jdb.todos.insertOne({ text: "Increase the numb  })[48G[3G[Jdb.todos.insertOne({ text: "Increase the numbe  })[49G[3G[Jdb.todos.insertOne({ text: "Increase the number  })[50G[3G[Jdb.todos.insertOne({ text: "Increase the number   })[51G[3G[Jdb.todos.insertOne({ text: "Increase the number o  })[52G[3G[Jdb.todos.insertOne({ text: "Increase the number of  })[53G[3G[Jdb.todos.insertOne({ text: "Increase the number of   })[54G[3G[Jdb.todos.insertOne({ text: "Increase the number of t  })[55G[3G[Jdb.todos.insertOne({ text: "Increase the number of to  })[56G[3G[Jdb.todos.insertOne({ text: "Increase the number of too  })[57G[3G[Jdb.todos.insertOne({ text: "Increase the number of tool  })[58G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools  })[59G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools   })[60G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools i  })[61G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in  })[62G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in   })[63G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in m  })[64G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my  })[65G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my   })[66G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my t  })[67G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my to  })[68G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my too  })[69G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my tool  })[70G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolb  })[71G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbe  })[72G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbel  })[73G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt  })[74G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt"  })[75G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt"   })[76G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt"  })[75G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt",  })[76G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt",   })[77G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", d  })[78G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", do  })[79G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", don  })[80G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done  })[81G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done:  })[82G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done:   })[83G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done: f  })[84G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done: fa  })[85G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done: fal  })[86G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done: fals  })[87G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done: false  })[88G[3G[Jdb.todos.insertOne({ text: "Increase the number of tools in my toolbelt", done: false  })[92G
+{
+	"acknowledged" : true,
+	"insertedId" : ObjectId("61b516b9c9aff8252f019299")
+}
+> exit[3G[Jexi[6G[3G[Jex[5G[3G[Je[4G[3G[J[3G[3G[J[3G^C
+bye
+]0;root@8481fe723395: /root@8481fe723395:/# ^C
+]0;root@8481fe723395: /root@8481fe723395:/# exit    exit
+exit
+bash-3.2$ exit
+exit
+
+Script done on Sat Dec 11 23:23:23 2021
