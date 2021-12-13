@@ -15,7 +15,7 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
 			{todos
 				.map((todo) => {
 					<Todo
-						key={todo.id}
+						key={todo._id}
 						todo={todo}
 						onClickComplete={() => onClickComplete(todo)}
 						onClickDelete={() => onClickDelete(todo)}
