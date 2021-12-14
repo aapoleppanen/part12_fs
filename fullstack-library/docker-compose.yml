@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+    - ./nginx.prod.conf:/etc/nginx/nginx.conf:ro
+    ports:
+    - 8080:80
+    container_name: library-reverse-proxy
+  frontend:
+    image: library-frontend-dev
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+     - ./frontend/:/usr/src/app
+     - /usr/src/app/node_modules
+    ports:
+     - 3000:3000
+    environment:
+     - REACT_APP_BACKEND_URL=api/graphql
+    container_name: library-frontend-prod
+  server:
+    image: library-backend-dev
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    volumes:
+     - ./backend/:/usr/src/app
+     - /usr/src/app/node_modules
+    container_name: library-backend-prod
+    ports:
+     - 3001:4000
+    environment:
+     - MONGO_URL=mongodb://user1:pass1@mongo:27017/library-app
+     - SECRET="SAMPLE_SECRET"
+  mongo:
+    image: mongo
+    ports:
+     - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: datab
+    volumes:
+     - ./backend/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+     - mongo_data:/data/db
+    container_name: mongo
+
+volumes:
+  mongo_data:
